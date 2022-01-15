@@ -68,6 +68,24 @@ void QLineNumberArea::clearDiagnosticMarkers()
     update();
 }
 
+QFont::Weight QLineNumberArea::intToFontWeight(int v) {
+
+	QFont::Weight w;
+
+	if (v <= 100) w = QFont::Thin;
+	else if (v <= 200) w = QFont::ExtraLight;
+	else if (v <= 300) w = QFont::Light;
+	else if (v <= 400) w = QFont::Normal;
+	else if (v <= 500) w = QFont::Medium;
+	else if (v <= 600) w = QFont::DemiBold;
+	else if (v <= 700) w = QFont::Bold;
+	else if (v <= 800) w = QFont::Bold;
+	else if (v <= 900) w = QFont::ExtraBold;
+	else w = QFont::Black;
+
+	return w;
+}
+
 void QLineNumberArea::paintEvent(QPaintEvent *event)
 {
     QPainter painter(this);
@@ -99,7 +117,7 @@ void QLineNumberArea::paintEvent(QPaintEvent *event)
 
     auto font = m_codeEditParent->font();
     QFont currentLineFont(font);
-    currentLineFont.setWeight(currentLineFormat.fontWeight());
+    currentLineFont.setWeight(intToFontWeight(currentLineFormat.fontWeight()));
     currentLineFont.setItalic(currentLineFormat.fontItalic());
     painter.setFont(font);
 
