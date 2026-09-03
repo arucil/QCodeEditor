@@ -59,6 +59,9 @@ class QLineNumberArea : public QWidget
     void paintEvent(QPaintEvent *event) override;
 
   private:
+    QFont::Weight intToFontWeight(int v);
+
+
     QSyntaxStyle *m_syntaxStyle;
 
     QCodeEditor *m_codeEditParent;

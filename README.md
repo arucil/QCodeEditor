@@ -9,7 +9,7 @@ must not use a resource file with the same name.
 
 ## Requirements
 0. C++17 featured compiler.
-0. Qt 5.
+0. Qt 5 / Qt 6.
 
 ## Abilities
 1. Highlight matched parentheses.

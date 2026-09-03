@@ -33,6 +33,7 @@
 #include <QSpinBox>
 #include <QStyle>
 #include <QVBoxLayout>
+#include <QFile>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent), m_setupLayout(nullptr), m_codeSampleCombobox(nullptr), m_highlighterCombobox(nullptr),
